@@ -1,0 +1,556 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Career Navigator | Find Your Future</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f7ff;
+    color:#172554;
+}
+
+header{
+    background:#101d46;
+    color:white;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+    color:#60a5fa;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 12px;
+    font-size:14px;
+}
+
+nav a:hover{color:#60a5fa}
+
+.hero{
+    padding:85px 8%;
+    text-align:center;
+    background:linear-gradient(135deg,#101d46,#2563eb);
+    color:white;
+}
+
+.hero h1{
+    font-size:43px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:17px;
+    line-height:1.7;
+    max-width:750px;
+    margin:auto;
+    color:#dbeafe;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    background:#facc15;
+    color:#172554;
+    padding:14px 28px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    border:none;
+    cursor:pointer;
+}
+
+section{
+    padding:65px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:32px;
+    margin-bottom:35px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:22px;
+}
+
+.feature-card{
+    background:white;
+    padding:28px;
+    border-radius:14px;
+    box-shadow:0 4px 18px #00000010;
+    text-align:center;
+}
+
+.feature-card h3{
+    margin:15px 0;
+    color:#2563eb;
+}
+
+.feature-card p{
+    color:#64748b;
+    line-height:1.6;
+}
+
+#guidance{
+    background:#eaf0ff;
+}
+
+.form-box{
+    max-width:700px;
+    background:white;
+    margin:auto;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 5px 25px #00000012;
+}
+
+label{
+    display:block;
+    margin:18px 0 8px;
+    font-weight:bold;
+}
+
+input,select{
+    width:100%;
+    padding:13px;
+    border:1px solid #cbd5e1;
+    border-radius:7px;
+    font-size:15px;
+    background:white;
+}
+
+.form-box button{
+    width:100%;
+}
+
+#result{
+    display:none;
+    margin-top:30px;
+    padding:25px;
+    background:#eff6ff;
+    border-radius:12px;
+    line-height:1.8;
+}
+
+.career-card{
+    background:white;
+    padding:15px;
+    margin-top:15px;
+    border-left:5px solid #2563eb;
+    border-radius:8px;
+}
+
+.career-card h3{
+    color:#1d4ed8;
+}
+
+.about{
+    text-align:center;
+    max-width:850px;
+    margin:auto;
+    line-height:1.8;
+    color:#475569;
+}
+
+footer{
+    background:#101d46;
+    color:white;
+    text-align:center;
+    padding:30px;
+    line-height:2;
+}
+
+@media(max-width:600px){
+    .hero h1{font-size:31px}
+    nav{width:100%}
+    nav a{margin:5px}
+    .form-box{padding:20px}
+    .section-title{font-size:26px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🚀 AI Career Navigator</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#guidance">Career Guidance</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HOME -->
+<div class="hero" id="home">
+    <h1>Discover Your Dream Career With AI</h1>
+    <p>
+        Confused about your future? Don't worry!
+        Our AI Career Navigator helps students discover
+        suitable career paths based on education,
+        interests and skills.
+    </p>
+    <a href="#guidance" class="btn">Explore My Career →</a>
+</div>
+
+<!-- FEATURES -->
+<section id="features">
+    <h2 class="section-title">Our Features</h2>
+
+    <div class="features">
+        <div class="feature-card">
+            <div style="font-size:40px">🤖</div>
+            <h3>AI Career Suggestions</h3>
+            <p>Explore career options according to your interests and education.</p>
+        </div>
+
+        <div class="feature-card">
+            <div style="font-size:40px">🎯</div>
+            <h3>Skill Analysis</h3>
+            <p>Understand which skills are useful for your dream career.</p>
+        </div>
+
+        <div class="feature-card">
+            <div style="font-size:40px">📚</div>
+            <h3>Learning Roadmap</h3>
+            <p>Discover courses and learning paths for your future.</p>
+        </div>
+
+        <div class="feature-card">
+            <div style="font-size:40px">💼</div>
+            <h3>Career Planning</h3>
+            <p>Get information about career opportunities and salaries.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CAREER GUIDANCE -->
+<section id="guidance">
+    <h2 class="section-title">Find Your Perfect Career</h2>
+
+    <div class="form-box">
+
+        <form id="careerForm">
+
+            <label>Student Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label>Your Education</label>
+            <select id="education" required>
+                <option value="">Select Education</option>
+                <option value="10th">10th Pass</option>
+                <option value="12th Science">12th Science</option>
+                <option value="12th Commerce">12th Commerce</option>
+                <option value="12th Arts">12th Arts</option>
+                <option value="graduate">Graduate</option>
+                <option value="postgraduate">Postgraduate</option>
+            </select>
+
+            <label>Choose Your Interest</label>
+            <select id="interest" required>
+                <option value="">Select Interest</option>
+                <option value="technology">Technology & Computers</option>
+                <option value="medical">Medical & Healthcare</option>
+                <option value="business">Business & Management</option>
+                <option value="creative">Art & Creativity</option>
+                <option value="government">Government Services</option>
+                <option value="science">Science & Research</option>
+            </select>
+
+            <label>Your Favourite Skill</label>
+            <select id="skill" required>
+                <option value="">Select Your Skill</option>
+                <option value="coding">Coding & Programming</option>
+                <option value="communication">Communication</option>
+                <option value="creativity">Creativity</option>
+                <option value="analysis">Problem Solving</option>
+                <option value="leadership">Leadership</option>
+                <option value="biology">Biology</option>
+            </select>
+
+            <button type="submit" class="btn">
+                Generate My Career Report ✨
+            </button>
+
+        </form>
+
+        <div id="result"></div>
+
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2 class="section-title">About AI Career Navigator</h2>
+    <div class="about">
+        <p>
+            AI Career Navigator is a student-focused career
+            guidance project designed to help students make
+            better decisions about their future.
+            It provides career suggestions, required skills,
+            learning roadmaps and estimated salary information.
+        </p>
+        <p>
+            Our goal is to make career information accessible
+            and easy to understand for every student.
+        </p>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background:#eaf0ff">
+    <h2 class="section-title">Contact Us</h2>
+
+    <div class="form-box">
+        <form id="contactForm">
+            <label>Your Name</label>
+            <input type="text" placeholder="Enter your name" required>
+
+            <label>Email Address</label>
+            <input type="email" placeholder="Enter your email" required>
+
+            <label>Your Message</label>
+            <input type="text" placeholder="Write your message" required>
+
+            <button class="btn" type="submit">Send Message</button>
+        </form>
+        <p id="contactMessage" style="margin-top:15px;text-align:center"></p>
+    </div>
+</section>
+
+<footer>
+    <h3>🚀 AI Career Navigator</h3>
+    <p>Helping Students Build A Better Future.</p>
+    <p>© 2026 AI Career Navigator. All Rights Reserved.</p>
+</footer>
+
+<script>
+
+// Career Recommendation Database
+const careers = {
+    technology: {
+        title:"Technology & Computers",
+        jobs:[
+            {
+                name:"Software Developer",
+                salary:"₹3–12 LPA (indicative)",
+                skills:"Python, JavaScript, HTML, CSS",
+                roadmap:"Learn programming → Build projects → Practice DSA → Apply for jobs"
+            },
+            {
+                name:"Data Scientist",
+                salary:"₹4–15 LPA (indicative)",
+                skills:"Python, Statistics, SQL, Machine Learning",
+                roadmap:"Learn Python → Statistics → Data Analysis → Machine Learning"
+            },
+            {
+                name:"Cybersecurity Analyst",
+                salary:"₹3–10 LPA (indicative)",
+                skills:"Networking, Linux, Security Fundamentals",
+                roadmap:"Learn Networking → Linux → Security → Practical Labs"
+            }
+        ]
+    },
+
+    medical:{
+        title:"Medical & Healthcare",
+        jobs:[
+            {
+                name:"Doctor",
+                salary:"Varies by qualification and specialization",
+                skills:"Biology, Chemistry, Patient Care",
+                roadmap:"Complete 12th PCB → NEET-UG → MBBS → Internship"
+            },
+            {
+                name:"Pharmacist",
+                salary:"₹2–6 LPA (indicative)",
+                skills:"Pharmaceutical Science, Chemistry",
+                roadmap:"Study D.Pharm or B.Pharm → Registration → Practical Experience"
+            },
+            {
+                name:"Medical Lab Technologist",
+                salary:"₹2–5 LPA (indicative)",
+                skills:"Biology, Lab Techniques, Testing",
+                roadmap:"Study relevant diploma or degree → Lab Training → Employment"
+            }
+        ]
+    },
+
+    business:{
+        title:"Business & Management",
+        jobs:[
+            {
+                name:"Business Analyst",
+                salary:"₹3–10 LPA (indicative)",
+                skills:"Excel, Communication, Data Analysis",
+                roadmap:"Learn Excel → Business Fundamentals → SQL → Projects"
+            },
+            {
+                name:"Digital Marketing Specialist",
+                salary:"₹2.5–8 LPA (indicative)",
+                skills:"SEO, Social Media, Content Marketing",
+                roadmap:"Learn Marketing → SEO → Social Media → Build Portfolio"
+            },
+            {
+                name:"Entrepreneur",
+                salary:"Depends on business performance",
+                skills:"Leadership, Planning, Finance",
+                roadmap:"Find a problem → Research → Build a business plan → Launch"
+            }
+        ]
+    },
+
+    creative:{
+        title:"Art & Creativity",
+        jobs:[
+            {
+                name:"Graphic Designer",
+                salary:"₹2.5–7 LPA (indicative)",
+                skills:"Photoshop, Canva, Illustrator",
+                roadmap:"Learn Design → Practice → Build Portfolio → Find Clients"
+            },
+            {
+                name:"UI/UX Designer",
+                salary:"₹3–10 LPA (indicative)",
+                skills:"Figma, Design Thinking, Research",
+                roadmap:"Learn UI/UX → Figma → Create Projects → Build Portfolio"
+            },
+            {
+                name:"Video Editor",
+                salary:"₹2–7 LPA (indicative)",
+                skills:"Video Editing, Storytelling",
+                roadmap:"Learn Editing → Practice → Build Portfolio → Get Projects"
+            }
+        ]
+    },
+
+    government:{
+        title:"Government Services",
+        jobs:[
+            {
+                name:"Civil Services Officer",
+                salary:"Pay varies by post and government rules",
+                skills:"General Knowledge, Reasoning, Writing",
+                roadmap:"Understand UPSC syllabus → Study → Practice → Clear Examination"
+            },
+            {
+                name:"Banking Officer",
+                salary:"Varies by bank and post",
+                skills:"Maths, Reasoning, English",
+                roadmap:"Prepare Quantitative Aptitude → Reasoning → English → Banking Exams"
+            },
+            {
+                name:"Defence Services",
+                salary:"Varies by entry and rank",
+                skills:"Fitness, Discipline, Leadership",
+                roadmap:"Check eligibility → Prepare for entry exam → Physical and Medical Tests"
+            }
+        ]
+    },
+
+    science:{
+        title:"Science & Research",
+        jobs:[
+            {
+                name:"Research Scientist",
+                salary:"Varies by field and qualification",
+                skills:"Research, Mathematics, Scientific Methods",
+                roadmap:"Study Science → Bachelor's Degree → Master's → Research"
+            },
+            {
+                name:"Biotechnologist",
+                salary:"₹3–8 LPA (indicative)",
+                skills:"Biology, Biotechnology, Laboratory Skills",
+                roadmap:"Study Biotechnology → Lab Practice → Specialization"
+            },
+            {
+                name:"Environmental Scientist",
+                salary:"₹3–7 LPA (indicative)",
+                skills:"Environmental Science, Research, Data Analysis",
+                roadmap:"Study Environmental Science → Field Work → Research"
+            }
+        ]
+    }
+};
+
+document.getElementById("careerForm").addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    const name=document.getElementById("name").value.trim();
+    const education=document.getElementById("education").value;
+    const interest=document.getElementById("interest").value;
+    const skill=document.getElementById("skill").value;
+
+    const data=careers[interest];
+
+    let html=`
+        <h2>🎉 Hello ${name}!</h2>
+        <p>Your Education: <b>${education}</b></p>
+        <p>Your Interest: <b>${data.title}</b></p>
+        <p>Your Favourite Skill: <b>${skill}</b></p>
+        <h3 style="margin-top:20px">Recommended Careers For You:</h3>
+    `;
+
+    data.jobs.forEach(job=>{
+        html+=`
+            <div class="career-card">
+                <h3>${job.name}</h3>
+                <p><b>Estimated Salary:</b> ${job.salary}</p>
+                <p><b>Required Skills:</b> ${job.skills}</p>
+                <p><b>Career Roadmap:</b> ${job.roadmap}</p>
+            </div>
+        `;
+    });
+
+    html+=`
+        <p style="margin-top:20px">
+        <b>Note:</b> These are general rule-based suggestions,
+        not a professional assessment or a guaranteed salary.
+        Check eligibility and course requirements before choosing.
+        </p>
+    `;
+
+    const result=document.getElementById("result");
+    result.innerHTML=html;
+    result.style.display="block";
+    result.scrollIntoView({behavior:"smooth"});
+});
+
+// Contact Form Demo
+document.getElementById("contactForm").addEventListener("submit",function(e){
+    e.preventDefault();
+    document.getElementById("contactMessage").innerText=
+    "Thank you! This demo form is working. A backend is needed to receive messages.";
+    this.reset();
+});
+
+</script>
+
+</body>
+</html>
+```
